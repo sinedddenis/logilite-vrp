@@ -4,6 +4,7 @@ node_modules/
 npm-debug.log*
 dist/
 build/
+.next/
 *.tsbuildinfo
 apps/**/node_modules/
 apps/**/dist/
