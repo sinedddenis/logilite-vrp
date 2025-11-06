@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@logilite/api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@fastify/cors": "^11.1.0",
     "@prisma/client": "^6.16.2",

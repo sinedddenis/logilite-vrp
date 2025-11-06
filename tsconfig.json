@@ -1,0 +1,33 @@
+{
+    "files": [],
+    "references": [
+        {
+            "path": "./apps/api"
+        },
+        {
+            "path": "./apps/web"
+        },
+        {
+            "path": "./packages/shared"
+        }
+    ],
+    "compilerOptions": {
+        "composite": true,
+        "target": "ES2022",
+        "module": "ESNext",
+        "lib": [
+            "ES2023",
+            "DOM"
+        ],
+        "moduleResolution": "Bundler",
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@logilite/shared/*": [
+                "packages/shared/src/*"
+            ]
+        }
+    }
+}

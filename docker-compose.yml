@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: logilite-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: logilite
+      POSTGRES_PASSWORD: logilite
+      POSTGRES_DB: logilite
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .                      
+      dockerfile: apps/api/Dockerfile 
+    container_name: logilite-api
+    environment:
+      DATABASE_URL: postgresql://logilite:logilite@db:5432/logilite
+      NODE_ENV: production
+      PORT: 3001
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+
+volumes:
+  pgdata:
